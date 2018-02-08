@@ -6,21 +6,10 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="com.ace.*" />  
+	<context:component-scan base-package="com.ace"/>  
 
 
-	<mvc:resources mapping="/resources/**" location="/resources/"/>
-	<mvc:annotation-driven>
-        <mvc:argument-resolvers>
-               <bean class="org.springframework.mobile.device.DeviceWebArgumentResolver" />
-           </mvc:argument-resolvers>
-    </mvc:annotation-driven>
-    
-    <mvc:interceptors>
-	    <!-- On pre-handle, resolve the device that originated the web request -->
-	    <bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" />
-	</mvc:interceptors>
-
+	<mvc:annotation-driven />
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/"/>
