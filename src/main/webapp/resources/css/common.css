@@ -72,19 +72,19 @@ mark, rp, rt, ruby, summary, time{ display:inline;}
 /** Animation: Ripple -------------------------------------------------- */
 @keyframes a-ripple { 0% { opacity: 0; }
 	25% { opacity: 1; }
-	100% { width: 200%; padding-bottom: 200%; opacity: 0; } 
+	100% { width: 200%; padding-bottom: 200%; opacity: 0; }
 }
 
 /* fake form - placeholder */
 .placeholder {color: #bbb;}
 
 /* fake form - radio */
-.radio {width: 24px; height: 24px; vertical-align: -5px; margin-right: 3px; background: url("../images/radios.png") no-repeat; display: inline-block;}
+.radio {width: 24px; height: 24px; vertical-align: -5px; margin-right: 3px; background: url("../img/radios.png") no-repeat; display: inline-block;}
 .radio.focus {background-position: 0 -24px;}
 .radio.checked {background-position: 0 -48px;}
 
 /* fake form - checkbox */
-.checkbox {width: 22px; height: 22px; vertical-align: -4px; margin-right: 3px; background: url("../images/checks.png") no-repeat; display: inline-block;}
+.checkbox {width: 22px; height: 22px; vertical-align: -4px; margin-right: 3px; background: url("../img/checks.png") no-repeat; display: inline-block;}
 .checkbox.focus {background-position: 0 -22px;}
 .checkbox.checked {background-position: 0 -44px;}
 
@@ -108,7 +108,7 @@ mark, rp, rt, ruby, summary, time{ display:inline;}
 .select-option .disabled span,
 .select-option .disabled strong {color: #bbb; text-decoration: line-through; background: none;}
 
-.ace {padding-bottom:39px;}
+.ace {}
 .ace .hide {display:none !important;}
 .ace .inner {}
 .ace header {position:relative;height:110px;border-bottom:1px solid #332e2e;}
@@ -130,7 +130,7 @@ mark, rp, rt, ruby, summary, time{ display:inline;}
 
 .ace .content .caution {position:relative;margin-left:-200px;padding:7px 0 15px 0;font-size:15px;line-height:23px;color:#7b7b7b;box-sizing:border-box;background:#fff;z-index:10;}
 .ace .content .caution p {position:relative;padding:11px 0 0 61px;}
-.ace .content .caution p:after {content:"";display:block;position:absolute;top:14px;left:30px;width:18px;height:18px;background:url("../images/ico.png") no-repeat 0 0;}
+.ace .content .caution p:after {content:"";display:block;position:absolute;top:14px;left:30px;width:18px;height:18px;background:url("../img/ico.png") no-repeat 0 0;}
 .ace .content .caution p strong {position:absolute;left:470px;font-weight:normal;color:#332e2e;}
 .ace .content .caution p strong span {padding:0 3px 0 5px;color:#d2d2d2;}
 
@@ -156,7 +156,7 @@ mark, rp, rt, ruby, summary, time{ display:inline;}
 .ace .content .info ul li.address .txt span {display:block;color:#b4b4b4;font-weight:bold;}
 .ace .content .info ul li.address .txt p {font-size:17px;line-height:25px;}
 .ace .content .info ul li .btn-post {display:inline-block;position:relative;width:190px;height:40px;background:#ea1a35;border-radius:20px;padding-left:75px;color:#fff;font-size:20px;box-sizing:border-box;line-height:40px;}
-.ace .content .info ul li .btn-post:before {content:"";display:block;position:absolute;top:8px;left:40px;width:24px;height:24px;background:url("../images/ico.png") no-repeat -18px 0;}
+.ace .content .info ul li .btn-post:before {content:"";display:block;position:absolute;top:8px;left:40px;width:24px;height:24px;background:url("../img/ico.png") no-repeat -18px 0;}
 .ace .content .info ul li .input-red {position:absolute;top:0;left: 0;bottom:0;right:0;border:0;height:58px;line-height:58px;width:100%;box-sizing:border-box;padding:0 30px;}
 .ace .content .info ul li .input-red::-webkit-input-placeholder {color:#ea1a35;font-size:15px;}
 .ace .content .info ul li .input-red::-moz-placeholder {color:#ea1a35;font-size:15px;}
@@ -169,7 +169,7 @@ mark, rp, rt, ruby, summary, time{ display:inline;}
 
 .ace .content .result {position:relative;margin-left:-200px;height:420px;background:#fff;overflow:hidden;border-top:1px solid #e3e3e3;z-index:10;}
 .ace .content .result .bg {position:absolute;top:31px;left:60px;}
-.ace .content .result .bg:after {content:"";display:block;width:90px;height:205px;margin-left:-22.5px;background:url("../images/screw.png") no-repeat 0 0;}
+.ace .content .result .bg:after {content:"";display:block;width:90px;height:205px;margin-left:-22.5px;background:url("../img/screw.png") no-repeat 0 0;}
 .ace .content .result .txt {padding:92px 0 0 156px;font-size:22px;line-height:33px;color:#939191;}
 .ace .content .result .txt span {display:block;}
 .ace .content .result strong {display:block;position:relative;padding:103px 0 0 52px;font-size:35px;color:#000;z-index:20;line-height:48px;font-weight:normal;}
@@ -183,8 +183,8 @@ mark, rp, rt, ruby, summary, time{ display:inline;}
 .ace .content .banner .swiper-button-next, .ace .content .banner .swiper-container-rtl .swiper-button-prev {top:90px;left:247px;width:24px;height:45px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ea1a35'%2F%3E%3C%2Fsvg%3E");background-size:24px 45px;}
 .ace .content .banner .swiper-button-prev, .ace .content .banner .swiper-container-rtl .swiper-button-next {top:90px;left:50px;width:24px;height:45px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ea1a35'%2F%3E%3C%2Fsvg%3E");background-size:24px 45px;}
 
-.ace .content footer {position:fixed;left:0;right:0;bottom:0;height:39px;border-top:1px solid #e3e3e3;box-sizing:border-box;background:#f8f8f8;font-size:12px;color:#332e2e;text-align:center;line-height:39px;z-index:30;letter-spacing:0;}
-.ace .content footer:after {
+.ace footer {height:39px;border-top:1px solid #e3e3e3;box-sizing:border-box;background:#f8f8f8;font-size:12px;color:#332e2e;text-align:center;line-height:39px;z-index:30;letter-spacing:0;clear:both;}
+.ace footer:after {
 	content:"";display:block;position:absolute;left:0;right:0;top:-21px;height:21px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,0e0e0e+100&0+0,0.1+100 */
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(14,14,14,0.1) 100%); /* FF3.6-15 */
