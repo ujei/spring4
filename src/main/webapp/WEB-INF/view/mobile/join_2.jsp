@@ -11,7 +11,13 @@
 	<script type="text/javascript" src="/resources/js/lib/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/lib/swiper.min.js"></script>
 	<script type="text/javascript" src="/resources/js/lib/jquery-fakeform-0.5.js"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 	<script type="text/javascript" src="/resources/js/common.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#postcodify_search_button").postcodifyPopUp();
+	});
+	</script>
 	<title>에이스 홈센터 오프라인 가입</title>
 </head>
 <body>
@@ -38,9 +44,10 @@
 					<strong>2</strong><span>개인정보 입력</span>
 				</div>
 			</div>
-			<div class="info">
-				<form action="">
+			<form name="userInfo" id="userInfo" action="">
+				<div class="info">
 					<div class="stitle">
+						<input name="di" id="di" type="hidden" value="${di}" />
 						<div class="inner">
 							<strong>기본 정보</strong>
 							<div class="essential"><span>*</span> 필수 기입 항목</div>
@@ -51,7 +58,8 @@
 							<div class="inner">
 								<div class="ti">성명</div>
 								<div class="txt">
-									김태욱
+									${name}
+									<input name="name" id="name" type="hidden" value="${name}" />
 									<div class="essential">
 										* 변경 불가
 									</div>
@@ -62,7 +70,8 @@
 							<div class="inner">
 								<div class="ti">휴대전화 번호</div>
 								<div class="txt">
-									01042432080
+									${mobileNo}
+									<input name="mobileNo" id="mobileNo" type="hidden" value="${mobileNo}" />
 									<div class="essential">
 										* 변경 불가
 									</div>
@@ -73,7 +82,8 @@
 							<div class="inner">
 								<div class="ti">생년월일</div>
 								<div class="txt">
-									1985년 12월 22일
+									${birthDay }
+									<input name="birthDay" id="birthDay" type="hidden" value="${birthDay}" />
 									<div class="essential">
 										* 변경 불가
 									</div>
@@ -95,33 +105,43 @@
 							<div class="inner">
 								<div class="ti">주소검색 <span>*</span></div>
 								<div class="txt">
-									<a href="#" class="btn-post">주소검색</a>
+									<a href="#" id="postcodify_search_button" class="btn-post">주소검색</a>
 								</div>
 							</div>
 						</li>
 						<li class="hide">
 							<div class="inner">
 								<div class="ti">우편번호</div>
-								<div class="txt">우편번호1</div>
+								<div class="txt">
+									<span class="postcodify_postcode5"></span>
+									<input type="text" name="postCode" class="postcodify_postcode5" value="" />
+								</div>
 							</div>
 						</li>
 						<li class="hide">
 							<div class="inner">
 								<div class="ti">도로명주소</div>
-								<div class="txt">주소1</div>
+								<div class="txt">
+									<span class="postcodify_address"></span>
+									<input type="text" name="address" class="postcodify_address" value="" />
+								</div>
 							</div>
 						</li>
 						<li class="hide">
 							<div class="inner">
 								<div class="ti">지번주소</div>
-								<div class="txt">주소2</div>
+								<div class="txt">
+									<span class="postcodify_jibeon_address"></span>
+									<input type="text" name="address" class="postcodify_jibeon_address" value="" />
+								</div>
 							</div>
 						</li>
 						<li class="hide">
 							<div class="inner">
 								<div class="ti">상세 주소 <span>*</span></div>
 								<div class="txt">
-									<input type="text" class="input-red" placeholder="상세 주소를 이곳에 기입해 주세요." />
+									<span class="postcodify_details"></span>
+									<input type="text" name="" class="postcodify_details input-red" value="" placeholder="상세 주소를 이곳에 기입해 주세요." />
 								</div>
 							</div>
 						</li>
@@ -245,8 +265,9 @@
 							다음 단계
 						</button>
 					</div>
-				</form>
-			</div>
+				
+				</div>
+			</form>
 			<footer>Copyrightⓒ Ace Home Center Korea Co., Ltd. All Rights Reserved.</footer>
 		</div>
 	</div>

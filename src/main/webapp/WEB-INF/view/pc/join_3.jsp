@@ -32,6 +32,35 @@
 						<li><strong>4</strong><span>가입 완료</span></li>
 					</ol>
 				</div>
+				<aside>
+					<h4>
+						지금,<br />
+						<strong>에이스 멤버십</strong>에<br />
+						가입하세요!
+					</h4>
+					<ol>
+						<li>
+							<strong>혜택 1</strong>
+							회원 전용<br />
+							특가 상품
+						</li>
+						<li>
+							<strong>혜택 2</strong>
+							가입 기념<br />
+							3,000P
+						</li>
+						<li>
+							<strong>혜택 3</strong>
+							구매 금액<br />
+							적립 0.5%
+						</li>
+						<li>
+							<strong>혜택 4</strong>
+							할인 정보<br />
+							사전 안내
+						</li>
+					</ol>
+				</aside>
 			</div>
 			<div class="title">
 				<div class="inner">
@@ -88,12 +117,13 @@
 								<div class="txt">우편, 전화, 문자</div>
 							</div>
 						</li>
-						<li>
-							<div class="inner">
-								<div class="ti">결혼 여부</div>
-								<div class="txt">미혼</div>
-							</div>
-						</li>
+					</ul>
+					<div class="title">
+						<div class="inner">
+							부가정보
+						</div>
+					</div>
+					<ul>
 						<li>
 							<div class="inner">
 								<div class="ti">거주형태</div>
@@ -115,11 +145,11 @@
 					</ul>
 				</div>
 				<div class="btn-area">
-					<button class="c-button c-button--gray" type="button" onclick="location.href='/input'">
+					<button class="c-button c-button--gray" type="button" onclick="location.href='step02.html'">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						수정하기
 					</button>
-					<button class="c-button c-button--red" type="button" onclick="location.href='/complete'">
+					<button class="c-button c-button--red" type="button" onclick="location.href='step04.html'">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						가입 완료
 					</button>
@@ -133,7 +163,23 @@
 				</div>
 			</form>
 		</div>
-		<footer>Copyrightⓒ Ace Home Center Korea Co., Ltd. All Rights Reserved.</footer>
+		<footer>
+			<div class="copyright">
+				<div class="inner">
+					<img src="/resources/img/logo_footer.png" alt="ACE Home Center" />
+					ⓒ ACE Home Center. All rights reserved.
+				</div>
+			</div>
+			<div class="inner">
+				<p class="txt">
+					<span>상호명 │ 유진기업(주)</span>
+					<span>사업자 등록번호 │ 130-81-22624</span>
+					<span>대표자명 │ 최종성</span>
+					<span>소재지 │ 경기도 부천시 오정구 석천로 457(삼정동)</span>
+					<span>개인정보 관리책임자 │ 이병우</span>
+				</p>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>

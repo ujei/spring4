@@ -33,6 +33,36 @@
 						<li class="active"><strong>4</strong><span>가입 완료</span></li>
 					</ol>
 				</div>
+				<aside>
+					<h4>
+						지금,<br />
+						<strong>에이스 멤버십</strong>에<br />
+						가입하세요!
+					</h4>
+					<ol>
+						<li>
+							<strong>혜택 1</strong>
+							회원 전용<br />
+							특가 상품
+						</li>
+						<li>
+							<strong>혜택 2</strong>
+							가입 기념<br />
+							3,000P
+						</li>
+						<li>
+							<strong>혜택 3</strong>
+							구매 금액<br />
+							적립 0.5%
+						</li>
+						<li>
+							<strong>혜택 4</strong>
+							할인 정보<br />
+							사전 안내
+						</li>
+					</ol>
+				</aside>
+
 			</div>
 			<div class="title">
 				<div class="inner">
@@ -72,7 +102,7 @@
 						<div class="swiper-slide">
 							<div class="inner">
 								<span>에이스하드웨어는?</span>
-								<strong>zzz 작업 도구!</strong>
+								<strong>최상의 작업 도구!</strong>
 								에이스하드웨어는 지금 바로 필요한 도구를 종류에 가리지 않고<br />
 								모두 구매할 수 있습니다. 또한 합리적인 가격으로 여러분께 다가갑니다.<br />
 								최상의 서비스, 최고의 품질!<br />
@@ -103,7 +133,7 @@
 				</script>
 			</div>
 			<div class="btn-area">
-				<button class="c-button c-button--red btn-home" type="button" onclick="location.href='/'">
+				<button class="c-button c-button--red btn-home" type="button">
 					<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 					첫 화면으로 돌아가기
 				</button>
@@ -113,7 +143,23 @@
 				<p>에이스 홈센터 브랜드 웹사이트에서는 에이스 홈센터의 구체적인 정보와<br />다양한 이벤트 등 실속있는 정보를 제공해 드립니다.</p>
 			</div>
 		</div>
-		<footer>Copyrightⓒ Ace Home Center Korea Co., Ltd. All Rights Reserved.</footer>
+		<footer>
+			<div class="copyright">
+				<div class="inner">
+					<img src="/resources/img/logo_footer.png" alt="ACE Home Center" />
+					ⓒ ACE Home Center. All rights reserved.
+				</div>
+			</div>
+			<div class="inner">
+				<p class="txt">
+					<span>상호명 │ 유진기업(주)</span>
+					<span>사업자 등록번호 │ 130-81-22624</span>
+					<span>대표자명 │ 최종성</span>
+					<span>소재지 │ 경기도 부천시 오정구 석천로 457(삼정동)</span>
+					<span>개인정보 관리책임자 │ 이병우</span>
+				</p>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>
