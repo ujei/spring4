@@ -14,13 +14,12 @@
 	<script type="text/javascript" src="/resources/js/lib/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/lib/swiper.min.js"></script>
 	<script type="text/javascript" src="/resources/js/lib/jquery-fakeform-0.5.js"></script>
-	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+	<script src="https://api.poesis.kr/post/search.js?v=3.4.1-0"></script>
 	<script type="text/javascript" src="/resources/js/common.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$("#postcodify_search_button").postcodifyPopUp();
-		
-		
+
 		$('#addr-detail').blur(function() {
 			if($(this).val() == "") {
 				$('.join-btn').addClass('hide');
@@ -29,7 +28,7 @@
 			}
 				
 		});
-
+		
 		$('.join-btn').click(function() {
 			if($('#addr_detail').val() == "") {
 				alert("필수 항목을 입력해 주세요");
@@ -41,14 +40,13 @@
 					data: encodeURI(_data)
 				}).done(function(data) {
 					$('#name').val(data.name);
-					$('#address').val(data.name);
-					$('#address_jibun').val(data.name);
-					$('#addr_detail').val(data.name);
+					$('#address').val(data.address);
+					$('#address_jibeon').val(data.address_jibeon);
+					$('#addr_detail').val(data.addr_detail);
 					
 					$('#userInfo').submit();
 				});
 			}
-				
 		})
 	});
 	</script>
@@ -166,7 +164,7 @@
 								<div class="ti">지번주소</div>
 								<div class="txt">
 									<span class="postcodify_jibeon_address"></span>
-									<input type="text" name="address" class="postcodify_jibeon_address" value="" />
+									<input type="text" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" />
 								</div>
 							</div>
 						</li>

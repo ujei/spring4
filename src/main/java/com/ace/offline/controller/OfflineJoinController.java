@@ -41,9 +41,11 @@ public class OfflineJoinController {
 	}
 	
 	@RequestMapping(value = "input", method = RequestMethod.GET)
-	public String inputUserInfoMobile(ModelMap model, HttpServletRequest request, Device device, @RequestParam String eData) throws UnsupportedEncodingException, ResponseException {
+	public String inputUserInfoMobile(ModelMap model, HttpServletRequest request, Device device, @RequestParam(required = false) String eData) throws UnsupportedEncodingException, ResponseException {
 		
-		mobileAuthService.processMobileAuth(model, eData);
+		if(eData != null && !eData.equals("")) {
+			mobileAuthService.processMobileAuth(model, eData);
+		}
 		
 		if(device.isMobile()) {
 			return DefaultConstants.DEFAULT_MOBILE_VIEW_INPUT_INFO;

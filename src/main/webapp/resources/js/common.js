@@ -3,8 +3,6 @@ $(document).ready(function() {
 
 	$(".btn-post").on("click", function() {
 		$(".info li").removeClass("hide");
-		$(".c-button--disable").addClass("hide");
-		$(".c-button--red").removeClass("hide");
 			
 		return false;
 	});

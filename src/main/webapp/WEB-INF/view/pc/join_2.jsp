@@ -17,11 +17,13 @@
 	$(document).ready(function() {
 		$("#postcodify_search_button").postcodifyPopUp();
 
-		$('#addr-detail').blur(function() {
+		$('#addr-detail').on('keyup', function() {
 			if($(this).val() == "") {
-				$('.join-btn').addClass('hide');
+				$(".c-button--disable").removeClass("hide");
+				$(".c-button--red").addClass("hide");
 			} else {
-				$('.join-btn').removeClass('hide');
+				$(".c-button--disable").addClass("hide");
+				$(".c-button--red").removeClass("hide");
 			}
 				
 		});
@@ -38,14 +40,44 @@
 				}).done(function(data) {
 					$('#name').val(data.name);
 					$('#address').val(data.address);
-					$('#address_jibun').val(data.address_jibus);
+					$('#address_jibeon').val(data.address_jibeon);
 					$('#addr_detail').val(data.addr_detail);
 					
 					$('#userInfo').submit();
 				});
 			}
-		})
+		});
+		
+		
+		$('.postcodify_popup_layer').change(function() {
+			$('#postCode').trigger('change');
+			
+			$('#address').trigger('change');
+				
+			$('#address_jibeon').trigger('change');
+		});
+		
+
 	});
+var changePostValue = function() {
+	if($('#postCode').val() != "") {
+		$('span.postcodify_postcode5').text($('#postCode').val());
+	}
+} 
+
+var changeAddrValue = function() {
+	if($('#address').val() != "") {
+		$('span.postcodify_address').text($('#address').val());
+	}
+}
+
+var changeJibeonValue = function() {
+	if($('#address_jibeon').val() != "") {
+		$('span.postcodify_jibeon_address').text($('#address_jibeon').val());
+	}
+}
+
+
 	</script>
 	<title>에이스 홈센터 오프라인 가입</title>
 </head>
@@ -173,7 +205,7 @@
 								<div class="ti">우편번호</div>
 								<div class="txt">
 									<span class="postcodify_postcode5"></span>
-									<input type="text" id="postCode" name="postCode" class="postcodify_postcode5" value="" />
+									<input type="hidden" id="postCode" name="postCode" class="postcodify_postcode5" value="" onchange="changePostValue()" "/>
 								</div>
 							</div>
 						</li>
@@ -182,7 +214,7 @@
 								<div class="ti">도로명주소</div>
 								<div class="txt">
 									<span class="postcodify_address"></span>
-									<input type="text" id="address" name="address" class="postcodify_address" value="" />
+									<input type="hidden" id="address" name="address" class="postcodify_address" value="" onchange="changeAddrValue()" />
 								</div>
 							</div>
 						</li>
@@ -191,7 +223,7 @@
 								<div class="ti">지번주소</div>
 								<div class="txt">
 									<span class="postcodify_jibeon_address"></span>
-									<input type="text" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" />
+									<input type="hidden" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" onchange="changeJibeonValue()" />
 								</div>
 							</div>
 						</li>
