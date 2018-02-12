@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="/resources/js/common.js"></script>
 	<script type="text/javascript">
 window.name ="Parent_window";
-
+var IS_AUTH = false;
 $(document).ready(function() {
 	$('.ipin').click(function() {
 		$.ajax({
@@ -41,6 +41,14 @@ $(document).ready(function() {
 			document.form_chk.target = "popupChk";
 			document.form_chk.submit();
 		});
+	});
+	
+	$('.skip_auth').click(function() {
+		if(!IS_AUTH) {
+			alert("본인인증 후 회원가입이 진행됩니다");	
+		} else {
+			location.href = "/input";
+		}
 	});
 });
 	</script>
@@ -119,11 +127,11 @@ $(document).ready(function() {
 					<p>본인 인증 중 오류 발생 시 문의 <strong>나이스평가정보<span>│</span>1600-1522</strong></p>
 				</div>
 				<div class="btn-area">
-					<button class="c-button c-button--gray" type="button" onclick="location.href='/input'">
+					<button class="c-button c-button--gray skip_auth" type="button">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						건너뛰기
 					</button>
-					<button class="c-button c-button--red" type="button" onclick="location.href='/input'">
+					<button class="c-button c-button--red skip_auth" type="button">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						다음 단계
 					</button>
@@ -162,6 +170,10 @@ $(document).ready(function() {
     <input type="hidden" name="param_r1" value="">
     <input type="hidden" name="param_r2" value="">
     <input type="hidden" name="param_r3" value="">
+</form>
+
+<form name="info" id="info" method="get" action="/input">
+	<input id="eData" type="hidden" name="eData" />
 </form>
 </body>
 </html>

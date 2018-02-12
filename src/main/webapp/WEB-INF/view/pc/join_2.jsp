@@ -16,6 +16,35 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$("#postcodify_search_button").postcodifyPopUp();
+
+		$('#addr-detail').blur(function() {
+			if($(this).val() == "") {
+				$('.join-btn').addClass('hide');
+			} else {
+				$('.join-btn').removeClass('hide');
+			}
+				
+		});
+		
+		$('.join-btn').click(function() {
+			if($('#addr_detail').val() == "") {
+				alert("필수 항목을 입력해 주세요");
+			} else {
+				var _data = $('#userInfo').serialize();
+				$.ajax({
+					method: "POST",
+					url: "/join/process",
+					data: encodeURI(_data)
+				}).done(function(data) {
+					$('#name').val(data.name);
+					$('#address').val(data.address);
+					$('#address_jibun').val(data.address_jibus);
+					$('#addr_detail').val(data.addr_detail);
+					
+					$('#userInfo').submit();
+				});
+			}
+		})
 	});
 	</script>
 	<title>에이스 홈센터 오프라인 가입</title>
@@ -74,7 +103,7 @@
 					<strong>2</strong><span>개인정보 입력</span>
 				</div>
 			</div>
-			<form name="userInfo" id="userInfo" action="">
+			<form name="userInfo" id="userInfo" action="/confirm" method="post">
 				<div class="info">
 					<input name="di" id="di" type="hidden" value="${di}" />
 					<div class="stitle">
@@ -144,7 +173,7 @@
 								<div class="ti">우편번호</div>
 								<div class="txt">
 									<span class="postcodify_postcode5"></span>
-									<input type="text" name="postCode" class="postcodify_postcode5" value="" />
+									<input type="text" id="postCode" name="postCode" class="postcodify_postcode5" value="" />
 								</div>
 							</div>
 						</li>
@@ -153,7 +182,7 @@
 								<div class="ti">도로명주소</div>
 								<div class="txt">
 									<span class="postcodify_address"></span>
-									<input type="text" name="address" class="postcodify_address" value="" />
+									<input type="text" id="address" name="address" class="postcodify_address" value="" />
 								</div>
 							</div>
 						</li>
@@ -162,7 +191,7 @@
 								<div class="ti">지번주소</div>
 								<div class="txt">
 									<span class="postcodify_jibeon_address"></span>
-									<input type="text" name="address" class="postcodify_jibeon_address" value="" />
+									<input type="text" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" />
 								</div>
 							</div>
 						</li>
@@ -171,7 +200,7 @@
 								<div class="ti">상세 주소 <span class="essential">*</span></div>
 								<div class="txt">
 									<span class="postcodify_details"></span>
-									<input type="text" name="" class="postcodify_details input-red" value="" placeholder="상세 주소를 이곳에 기입해 주세요." />
+									<input type="text" id="addr_detail" name="addr_detail" class="postcodify_details input-red" value="" placeholder="상세 주소를 이곳에 기입해 주세요." />
 								</div>
 							</div>
 						</li>
@@ -271,7 +300,7 @@
 					</ul>
 				</div>
 				<div class="btn-area">
-					<button class="c-button c-button--gray" type="button" onclick="location.href='step01.html'">
+					<button class="c-button c-button--gray" type="button" onclick="history.back()">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						이전 단계
 					</button>
@@ -279,7 +308,7 @@
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						필수 항목을 기입하세요.
 					</button>
-					<button class="c-button c-button--red hide" type="button" onclick="location.href='step03.html'">
+					<button class="join-btn c-button c-button--red hide" type="button">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						다음 단계
 					</button>

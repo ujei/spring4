@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    %>
 
 <!doctype html>
 <html lang="ko">
 <head>
 	<meta charset="utf-8" />
+	<meta http-equiv="Content-Language" content="ko" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
 	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 	<link rel="stylesheet" type="text/css" href="/resources/css/mobile/common.css">
@@ -16,6 +19,37 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$("#postcodify_search_button").postcodifyPopUp();
+		
+		
+		$('#addr-detail').blur(function() {
+			if($(this).val() == "") {
+				$('.join-btn').addClass('hide');
+			} else {
+				$('.join-btn').removeClass('hide');
+			}
+				
+		});
+
+		$('.join-btn').click(function() {
+			if($('#addr_detail').val() == "") {
+				alert("필수 항목을 입력해 주세요");
+			} else {
+				var _data = $('#userInfo').serialize();
+				$.ajax({
+					method: "POST",
+					url: "/join/process",
+					data: encodeURI(_data)
+				}).done(function(data) {
+					$('#name').val(data.name);
+					$('#address').val(data.name);
+					$('#address_jibun').val(data.name);
+					$('#addr_detail').val(data.name);
+					
+					$('#userInfo').submit();
+				});
+			}
+				
+		})
 	});
 	</script>
 	<title>에이스 홈센터 오프라인 가입</title>
@@ -44,7 +78,7 @@
 					<strong>2</strong><span>개인정보 입력</span>
 				</div>
 			</div>
-			<form name="userInfo" id="userInfo" action="">
+			<form name="userInfo" id="userInfo" action="/confirm" method="post">
 				<div class="info">
 					<div class="stitle">
 						<input name="di" id="di" type="hidden" value="${di}" />
@@ -141,7 +175,7 @@
 								<div class="ti">상세 주소 <span>*</span></div>
 								<div class="txt">
 									<span class="postcodify_details"></span>
-									<input type="text" name="" class="postcodify_details input-red" value="" placeholder="상세 주소를 이곳에 기입해 주세요." />
+									<input type="text" id="addr_detail" name="addr_detail" class="postcodify_details input-red" value="" placeholder="상세 주소를 이곳에 기입해 주세요." />
 								</div>
 							</div>
 						</li>
@@ -260,7 +294,7 @@
 							<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 							필수 항목을 기입하세요.
 						</button>
-						<button class="c-button c-button--red hide" type="button" onclick="location.href='/confirm'">
+						<button class="join-btn c-button c-button--red hide" type="button" onclick="location.href='/confirm'">
 							<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 							다음 단계
 						</button>

@@ -43,19 +43,19 @@
 						<li>
 							<div class="inner">
 								<div class="ti">성명</div>
-								<div class="txt">김선수</div>
+								<div class="txt">${name }</div>
 							</div>
 						</li>
 						<li>
 							<div class="inner">
 								<div class="ti">휴대전화 번호</div>
-								<div class="txt">01042432080</div>
+								<div class="txt">${mobileNo }</div>
 							</div>
 						</li>
 						<li>
 							<div class="inner">
 								<div class="ti">생년월일</div>
-								<div class="txt">1985년 12월 22일</div>
+								<div class="txt">${birthDay }</div>
 							</div>
 						</li>
 						<li>
@@ -68,15 +68,14 @@
 							<div class="inner">
 								<div class="ti">주소</div>
 								<div class="txt">
-									(13903)<br />
+									(${postCode })<br />
 									<span>도로명주소</span>
 									<p>
-										경기도 안양시 만안구 연현로79번길 56<br />
-										(LG빌리지아파트), 411-501
+										${addr1 }
 									</p>
 									<span>지번주소</span>
 									<p>
-										경기도 안양시 만안구 석수동 415-1, LG빌리지아파트, 411-501
+										${addr2 }
 									</p>
 								</div>
 							</div>
@@ -87,30 +86,6 @@
 								<div class="txt">우편, 전화, 문자</div>
 							</div>
 						</li>
-						<li>
-							<div class="inner">
-								<div class="ti">결혼 여부</div>
-								<div class="txt">미혼</div>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<div class="ti">거주형태</div>
-								<div class="txt">아파트</div>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<div class="ti">방문경로</div>
-								<div class="txt">지인소개</div>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<div class="ti">관심풍목</div>
-								<div class="txt">배관</div>
-							</div>
-						</li>
 					</ul>
 				</div>
 				<div class="btn-area">
@@ -118,7 +93,7 @@
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						수정하기
 					</button>
-					<button class="c-button c-button--red" type="button" onclick="location.href='/confirm'">
+					<button class="c-button c-button--red" type="button" onclick="location.href='/complete'">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						가입 완료
 					</button>

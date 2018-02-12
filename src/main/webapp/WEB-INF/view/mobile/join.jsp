@@ -116,5 +116,10 @@ $(document).ready(function() {
     <input type="hidden" name="param_r2" value="">
     <input type="hidden" name="param_r3" value="">
 </form>
+
+
+<form name="info" id="info" method="get" action="/input">
+	<input id="eData" type="hidden" name="eData" />
+</form>
 </body>
 </html>

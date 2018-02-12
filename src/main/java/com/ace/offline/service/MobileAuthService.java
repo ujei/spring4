@@ -35,8 +35,8 @@ public class MobileAuthService {
 		// CheckPlus(본인인증) 처리 후, 결과 데이타를 리턴 받기위해 다음예제와 같이 http부터 입력합니다.
 		// 리턴url은 인증 전 인증페이지를 호출하기 전 url과 동일해야 합니다. ex) 인증 전 url : http://www.~ 리턴 url :
 		// http://www.~
-		String sReturnUrl = "http://localhost:8080//auth/mobile/process"; // 성공시 이동될 URL
-		String sErrorUrl = "http://localhost:8080//auth/mobile/fail"; // 실패시 이동될 URL
+		String sReturnUrl = "http://homecenter-elb-2083112775.ap-northeast-2.elb.amazonaws.com/auth/mobile/process"; // 성공시 이동될 URL
+		String sErrorUrl = "http://homecenter-elb-2083112775.ap-northeast-2.elb.amazonaws.com/auth/mobile/process"; // 실패시 이동될 URL
 
 		// 입력될 plain 데이타를 만든다.
 		String sPlainData = "7:REQ_SEQ" + sRequestNumber.getBytes().length + ":" + sRequestNumber + "8:SITECODE"
@@ -66,7 +66,7 @@ public class MobileAuthService {
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unused" })
 	public ModelMap processMobileAuth(ModelMap model, String sEncodeData) throws ResponseException, UnsupportedEncodingException {
 		NiceID.Check.CPClient niceCheck = new NiceID.Check.CPClient();
 
@@ -115,6 +115,7 @@ public class MobileAuthService {
 			model.addAttribute("birthDay", sBirthDate);
 			model.addAttribute("mobileNo", sMobileNo);
 			model.addAttribute("gende", sGender);
+			model.addAttribute("mobile", true);
 		} else if (iReturn == -1) {
 			throw new ResponseException("복호화 시스템 에러입니다.");
 		} else if (iReturn == -4) {

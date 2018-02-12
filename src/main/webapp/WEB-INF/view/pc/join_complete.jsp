@@ -133,7 +133,7 @@
 				</script>
 			</div>
 			<div class="btn-area">
-				<button class="c-button c-button--red btn-home" type="button">
+				<button class="c-button c-button--red btn-home" type="button" onclick="location.href='/'">
 					<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 					첫 화면으로 돌아가기
 				</button>

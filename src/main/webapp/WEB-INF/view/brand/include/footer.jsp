@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 		<footer>
-			<div class="info">
+			<div class="top">
 				<div class="inner">
 					<a href="#">에이스 홈센터 정보 센터</a>
 				</div>
@@ -50,20 +50,45 @@
 					</dl>
 				</div>
 			</div>
-			<div class="family">
+			<div class="btm">
+				<div class="etc">
+					<div class="inner">
+						<img src="/resources/brand/images/logo_footer.png" alt="ACE Home Center" />
+						<div class="link">
+							<a href="#">사이트 맵</a>
+							<a href="#">이용 정책</a>
+							<a href="#">개인정보 보호 정책</a>
+						</div>
+					</div>
+				</div>
 				<div class="inner">
-					<strong>유진기업 패밀리 웹사이트</strong>
-					<a href="#" class="homeday"><img src="/resources/brand/images/logo_homeday.png" alt="HOME DAY" /></a>
-					<a href="#" class="homedaymall"><img src="/resources/brand/images/logo_homedaymall.png" alt="HOME DAY MALL" /></a>
+					<div class="info">
+						<ul>
+							<li><strong>상호명</strong>유진기업(주)</li>
+							<li><strong>사업자 등록번호</strong>130-81-22624</li>
+							<li><strong>대표자명</strong>최종성</li>
+							<li><strong>소재지</strong>경기도 부천시 오정구 석천로 457(삼정동)</li>
+							<li><strong>고객센터 주소</strong>서울시 영등포구 국제금융로2길 32 여의도 파이낸스타워 14층</li>
+							<li><strong>개인정보 관리책임자</strong>이병우</li>
+						</ul>
+						<p>ⓒ ACE Home Center. All rights reserved.</p>
+					</div>
+					<div class="family">
+						<ul>
+							<li>
+								<strong>패밀리 웹사이트</strong>
+								<a href="https://www.homeday.com" target="_blank" class="homeday"><img src="/resources/brand/images/logo_homeday.png" alt="HOME DAY" /></a>
+								<a href="http://www.homedaymall.com" target="_blank" class="homedaymall"><img src="/resources/brand/images/logo_homedaymall.png" alt="HOME DAY MALL" /></a>
+							</li>
+							<li>
+								<strong>SNS</strong>
+								<a href="" class="facebook"><img src="/resources/brand/images/facebook.png" alt="" /></a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="link">
-				<div class="inner">
-					<a href="#">사이트 맵</a>
-					<a href="#">이용 정책</a>
-					<a href="#">개인정보 보호 정책</a>
-				</div>
-			</div>
+			<a href="#top" class="btn-top">화면 상단으로</a>
 		</footer>
 	</div>
 </body>
