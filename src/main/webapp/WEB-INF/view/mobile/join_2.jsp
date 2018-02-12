@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="/resources/js/lib/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/lib/swiper.min.js"></script>
 	<script type="text/javascript" src="/resources/js/lib/jquery-fakeform-0.5.js"></script>
-	<script src="https://api.poesis.kr/post/search.js?v=3.4.1-0"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 	<script type="text/javascript" src="/resources/js/common.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
@@ -146,7 +146,7 @@
 								<div class="ti">우편번호</div>
 								<div class="txt">
 									<span class="postcodify_postcode5"></span>
-									<input type="text" name="postCode" class="postcodify_postcode5" value="" />
+									<input type="text" id="postCode" name="postCode" class="postcodify_postcode5" value="" />
 								</div>
 							</div>
 						</li>
