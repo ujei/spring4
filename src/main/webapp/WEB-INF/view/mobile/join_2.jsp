@@ -49,7 +49,45 @@
 					$('#userInfo').submit();
 				});
 			}
-		})
+		});
+		
+		$('#postCode').change(function() {
+			if($('#postCode').val() != "") {
+				$('span.postcodify_postcode5').text($('#postCode').val());
+			}
+		});
+		
+		$('#address').change(function() {
+			if($('#address').val() != "") {
+				$('span.postcodify_address').text($('#address').val());
+			}
+		});
+		
+		$('#address_jibeon').change(function() {
+			if($('#address_jibeon').val() != "") {
+				$('span.postcodify_jibeon_address').text($('#address_jibeon').val());
+			}
+		});
+
+		MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+		//감시자의 설정:
+		var config = { attributes: true};
+		 
+		var trackChange = function(element) {
+		  var observer = new MutationObserver(function(mutations, observer) {
+		    if(mutations[0].attributeName == "value") {
+		        $(element).trigger("change");
+		    }
+		  });
+		  observer.observe(element, config);
+		}
+
+		// Just pass an element to the function to start tracking
+		trackChange( $('#postCode')[0] );
+		trackChange( $('#address')[0] );
+		trackChange( $('#address_jibeon')[0] );
+
 	});
 	</script>
 	<title>에이스 홈센터 오프라인 가입</title>

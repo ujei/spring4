@@ -48,34 +48,44 @@
 			}
 		});
 		
-		
-		$('.postcodify_popup_layer').change(function() {
-			$('#postCode').trigger('change');
-			
-			$('#address').trigger('change');
-				
-			$('#address_jibeon').trigger('change');
+		$('#postCode').change(function() {
+			if($('#postCode').val() != "") {
+				$('span.postcodify_postcode5').text($('#postCode').val());
+			}
 		});
 		
+		$('#address').change(function() {
+			if($('#address').val() != "") {
+				$('span.postcodify_address').text($('#address').val());
+			}
+		});
+		
+		$('#address_jibeon').change(function() {
+			if($('#address_jibeon').val() != "") {
+				$('span.postcodify_jibeon_address').text($('#address_jibeon').val());
+			}
+		});
+
+		MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+		//감시자의 설정:
+		var config = { attributes: true};
+		 
+		var trackChange = function(element) {
+		  var observer = new MutationObserver(function(mutations, observer) {
+		    if(mutations[0].attributeName == "value") {
+		        $(element).trigger("change");
+		    }
+		  });
+		  observer.observe(element, config);
+		}
+
+		// Just pass an element to the function to start tracking
+		trackChange( $('#postCode')[0] );
+		trackChange( $('#address')[0] );
+		trackChange( $('#address_jibeon')[0] );
 
 	});
-var changePostValue = function() {
-	if($('#postCode').val() != "") {
-		$('span.postcodify_postcode5').text($('#postCode').val());
-	}
-} 
-
-var changeAddrValue = function() {
-	if($('#address').val() != "") {
-		$('span.postcodify_address').text($('#address').val());
-	}
-}
-
-var changeJibeonValue = function() {
-	if($('#address_jibeon').val() != "") {
-		$('span.postcodify_jibeon_address').text($('#address_jibeon').val());
-	}
-}
 
 
 	</script>
@@ -205,7 +215,7 @@ var changeJibeonValue = function() {
 								<div class="ti">우편번호</div>
 								<div class="txt">
 									<span class="postcodify_postcode5"></span>
-									<input type="hidden" id="postCode" name="postCode" class="postcodify_postcode5" value="" onchange="changePostValue()" "/>
+									<input type="hidden" id="postCode" name="postCode" class="postcodify_postcode5" value="" />
 								</div>
 							</div>
 						</li>
@@ -214,7 +224,7 @@ var changeJibeonValue = function() {
 								<div class="ti">도로명주소</div>
 								<div class="txt">
 									<span class="postcodify_address"></span>
-									<input type="hidden" id="address" name="address" class="postcodify_address" value="" onchange="changeAddrValue()" />
+									<input type="hidden" id="address" name="address" class="postcodify_address" value="" />
 								</div>
 							</div>
 						</li>
@@ -223,7 +233,7 @@ var changeJibeonValue = function() {
 								<div class="ti">지번주소</div>
 								<div class="txt">
 									<span class="postcodify_jibeon_address"></span>
-									<input type="hidden" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" onchange="changeJibeonValue()" />
+									<input type="hidden" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" />
 								</div>
 							</div>
 						</li>
