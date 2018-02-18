@@ -20,11 +20,13 @@
 	$(document).ready(function() {
 		$("#postcodify_search_button").postcodifyPopUp();
 
-		$('#addr-detail').blur(function() {
+		$('#addr_detail').on('keyup', function() {
 			if($(this).val() == "") {
-				$('.join-btn').addClass('hide');
+				$(".c-button--disable").removeClass("hide");
+				$(".c-button--red").addClass("hide");
 			} else {
-				$('.join-btn').removeClass('hide');
+				$(".c-button--disable").addClass("hide");
+				$(".c-button--red").removeClass("hide");
 			}
 				
 		});
@@ -181,11 +183,11 @@
 							<div class="inner">
 								<div class="ti">마케팅 수신 동의</div>
 								<div class="txt">
-									<input type="checkbox" id="marketing-post" name="marketing" checked="checked">
+									<input type="checkbox" id="marketing-post" name="marketing-post" checked="checked">
 									<label for="marketing-post">우편</label>
-									<input type="checkbox" id="marketing-phone" name="marketing" checked="checked">
+									<input type="checkbox" id="marketing-phone" name="marketing-phone" checked="checked">
 									<label for="marketing-phone">전화</label>
-									<input type="checkbox" id="marketing-sms" name="marketing" checked="checked">
+									<input type="checkbox" id="marketing-sms" name="marketing-sms" checked="checked">
 									<label for="marketing-sms">문자</label>
 								</div>
 							</div>
@@ -201,7 +203,7 @@
 							<div class="inner">
 								<div class="ti">결혼 여부</div>
 								<div class="txt">
-									<input type="radio" id="marry-single" name="marry" checked="checked">
+									<input type="radio" id="marry-single" name="marry" >
 									<label for="marry-single">미혼</label>
 									<input type="radio" id="marry-married" name="marry">
 									<label for="marry-married">기혼</label>
@@ -212,7 +214,7 @@
 							<div class="inner">
 								<div class="ti">거주형태</div>
 								<div class="txt">
-									<input type="radio" id="house-apt" name="house" checked="checked">
+									<input type="radio" id="house-apt" name="house">
 									<label for="house-apt">아파트</label>
 									<input type="radio" id="house-detached" name="house">
 									<label for="house-detached">단독주택</label><br />

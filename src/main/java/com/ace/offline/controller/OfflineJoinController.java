@@ -111,7 +111,7 @@ public class OfflineJoinController {
 	@RequestMapping(value = "auth/phone", method = RequestMethod.POST)
 	@ResponseBody
 	public String mobileAuth(HttpServletRequest request, Device device) throws ResponseException {
-		return mobileAuthService.initMobileAuth();
+		return mobileAuthService.initMobileAuth(request);
 	}
 	
 	@RequestMapping(value = "/auth/mobile/process", method = RequestMethod.POST)
@@ -128,7 +128,7 @@ public class OfflineJoinController {
 	@RequestMapping(value = "auth/ipin", method = RequestMethod.POST)
 	@ResponseBody
 	public String ipinAuth(HttpServletRequest request, Device device) throws ResponseException {
-		return IPINAuthService.initIPINAuth();
+		return IPINAuthService.initIPINAuth(request);
 	}
 	
 	@RequestMapping(value = "auth/ipin/process", method = RequestMethod.POST)

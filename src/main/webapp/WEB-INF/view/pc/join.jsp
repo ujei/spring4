@@ -114,11 +114,11 @@ $(document).ready(function() {
 				<div class="confirm-type">
 					<div class="inner">
 						<div class="ipin">
-							<div class="pic"><img src="/resources/img/ipin.jpg" alt="아이핀 인증" /></div>
+							<div class="pic" style="cursor:pointer;"><img src="/resources/img/ipin.jpg" alt="아이핀 인증" /></div>
 							<p>아이핀 인증</p>
 						</div>
 						<div class="phone">
-							<div class="pic"><img src="/resources/img/phone.jpg" alt="휴대전화 인증" /></div>
+							<div class="pic" style="cursor:pointer;"><img src="/resources/img/phone.jpg" alt="휴대전화 인증" /></div>
 							<p>휴대전화 인증</p>
 						</div>
 					</div>

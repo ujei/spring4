@@ -85,13 +85,13 @@ mark, rp, rt, ruby, summary, time{ display:inline;}
 .placeholder {color: #bbb;}
 
 /* fake form */
-.radio {width: 19px; height: 19px; vertical-align: -5px; margin-right: 3px; background: url("../img/radios.png") no-repeat; display: inline-block;background-size:cover;}
+.radio {width: 19px; height: 19px; vertical-align: -5px; margin-right: 3px; background: url("../../img/mobile/radios.png") no-repeat; display: inline-block;background-size:cover;}
 .radio.focus {background-position: 0 -24px;}
 .radio.checked {background-position: 0 -48px;}
 .radio.disabled {background-position: 0 -99px;}
 .radio.checked.disabled {background-position: 0 -132px;}
 
-.checkbox {width: 19px; height: 19px; vertical-align: -5px; margin-right: 3px; background: url("../img/checks.png") no-repeat; display: inline-block;background-size:cover;}
+.checkbox {width: 19px; height: 19px; vertical-align: -5px; margin-right: 3px; background: url("../../img/mobile/checks.png") no-repeat; display: inline-block;background-size:cover;}
 .checkbox.focus {background-position: 0 -24px;}
 .checkbox.checked {background-position: 0 -48px;}
 .checkbox.disabled {background-position: 0 -99px;}
@@ -152,7 +152,7 @@ header p {position:absolute;top:29px;right:24px;font-size:15px;color:#303030;lin
 
 .caution {position:relative;max-width:360px;margin:0 auto;padding:7px 0 15px 0;font-size:11px;line-height:15px;color:#7b7b7b;box-sizing:border-box;}
 .caution p {position:relative;padding:8px 30px 0 36px;}
-.caution p:after {content:"";display:block;position:absolute;top:8px;left:15px;width:12.5px;height:12.5px;background:url("../img/ico.png") no-repeat 0 0;background-size:cover;}
+.caution p:after {content:"";display:block;position:absolute;top:8px;left:15px;width:12.5px;height:12.5px;background:url("../../img/mobile/ico.png") no-repeat 0 0;background-size:cover;}
 .caution p strong {position:absolute;right:15px;font-weight:normal;color:#303030;}
 
 .confirm-type {height:270px;padding:36px 0;border-top:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;background:#f8f8f8;text-align:center;box-sizing:border-box;font-size:15px;color:#303030;}
@@ -185,7 +185,7 @@ header p {position:absolute;top:29px;right:24px;font-size:15px;color:#303030;lin
 
 
 .info ul li .btn-post {display:inline-block;position:relative;width:105px;height:24px;background:#ea1a35;border-radius:12px;padding-left:42px;color:#fff;font-size:10px;box-sizing:border-box;line-height:24px;}
-.info ul li .btn-post:before {content:"";display:block;position:absolute;top:6px;left:25px;width:12.5px;height:12.5px;background:url("../img/ico.png") no-repeat -12.5px 0;background-size:cover;}
+.info ul li .btn-post:before {content:"";display:block;position:absolute;top:6px;left:25px;width:12.5px;height:12.5px;background:url("../../img/mobile/ico.png") no-repeat -12.5px 0;background-size:cover;}
 .info ul li .input-red {position:absolute;top:0;left: 0;bottom:0;right:0;border:0;height:38px;line-height:38px;width:100%;box-sizing:border-box;padding:0 30px;}
 .info ul li .input-red::-webkit-input-placeholder {color:#ea1a35;}
 .info ul li .input-red::-moz-placeholder {color:#ea1a35;}
@@ -208,7 +208,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .result {height:225px;background:#fff;text-align:center;overflow:hidden;border-top:1px solid #e3e3e3;}
 .result .bg {position:absolute;top:0;left:50%;width:125px;height:98px;margin-left:-62.5px;border-bottom:1px solid #e3e3e3;z-index:1;}
-.result .bg:after {content:"";display:block;position:absolute;top:-18px;left:50%;width:45px;height:102.5px;margin-left:-22.5px;background:url("../img/screw.png") no-repeat 0 0;background-size:cover;}
+.result .bg:after {content:"";display:block;position:absolute;top:-18px;left:50%;width:45px;height:102.5px;margin-left:-22.5px;background:url("../../img/mobile/screw.png") no-repeat 0 0;background-size:cover;}
 .result .txt {padding-top:25px;font-size:15px;color:#000;}
 .result .txt span {margin-left:30px;}
 .result .txt span:first-child {margin:0 30px 0 0;}

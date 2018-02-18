@@ -17,7 +17,7 @@
 	$(document).ready(function() {
 		$("#postcodify_search_button").postcodifyPopUp();
 
-		$('#addr-detail').on('keyup', function() {
+		$('#addr_detail').on('keyup', function() {
 			if($(this).val() == "") {
 				$(".c-button--disable").removeClass("hide");
 				$(".c-button--red").addClass("hide");
@@ -240,11 +240,11 @@ var changeJibeonValue = function() {
 							<div class="inner">
 								<div class="ti">마케팅 수신 동의</div>
 								<div class="txt">
-									<input type="checkbox" id="marketing-post" name="marketing">
+									<input type="checkbox" id="marketing-post" name="marketing-post" checked="checked">
 									<label for="marketing-post">우편</label>
-									<input type="checkbox" id="marketing-phone" name="marketing">
+									<input type="checkbox" id="marketing-phone" name="marketing-phone" checked="checked">
 									<label for="marketing-phone">전화</label>
-									<input type="checkbox" id="marketing-sms" name="marketing">
+									<input type="checkbox" id="marketing-sms" name="marketing-sms" checked="checked">
 									<label for="marketing-sms">문자</label>
 								</div>
 							</div>
@@ -260,7 +260,7 @@ var changeJibeonValue = function() {
 							<div class="inner">
 								<div class="ti">거주형태</div>
 								<div class="txt">
-									<input type="radio" id="house-apt" name="house" checked="checked">
+									<input type="radio" id="house-apt" name="house">
 									<label for="house-apt">아파트</label>
 									<input type="radio" id="house-detached" name="house">
 									<label for="house-detached">단독주택</label>
