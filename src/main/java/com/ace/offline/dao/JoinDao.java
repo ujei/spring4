@@ -1,8 +1,22 @@
 package com.ace.offline.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.ace.offline.dao.mapper.UserMapper;
 import com.ace.offline.domain.User;
 
-public interface JoinDao {
+@Repository
+public class JoinDao {
 
-	public void insertUserJoinInfo(User userInfo);
+	@Autowired
+	UserMapper userMapper;
+	
+	public void insertUserJoinInfo(User userInfo) {
+		
+	}
+	
+	public void selectUserInfo() {
+		userMapper.getUser();
+	}
 }

@@ -74,9 +74,13 @@ public class OfflineJoinController {
 		model.addAttribute("mobileNo", request.getParameter("mobileNo"));
 		model.addAttribute("birthDay", request.getParameter("birthDay"));
 		model.addAttribute("postCode", request.getParameter("postCode"));
+		model.addAttribute("gender", request.getParameter("gender"));
 		model.addAttribute("address", request.getParameter("address"));
 		model.addAttribute("address_jibeon", request.getParameter("address_jibeon"));
 		model.addAttribute("addr_detail", request.getParameter("addr_detail"));
+		model.addAttribute("marketing-post", request.getParameter("marketing-post"));
+		model.addAttribute("marketing-phone", request.getParameter("marketing-phone"));
+		model.addAttribute("marketing-sms", request.getParameter("marketing-sms"));
 		
 		return userInfo;
 	}

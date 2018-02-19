@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 
 import com.ace.common.exception.ResponseException;
+import com.ace.offline.util.CommonUtils;
 
 import NiceID.Check.CPClient;
 
@@ -18,6 +19,8 @@ public class MobileAuthService {
 
 	public String initMobileAuth(HttpServletRequest request) throws ResponseException {
 
+		String domainName = CommonUtils.getHostUri(request);
+		
 		CPClient niceCheck = new NiceID.Check.CPClient();
 
 		String sSiteCode = "BE740"; // NICE로부터 부여받은 사이트 코드
@@ -37,8 +40,9 @@ public class MobileAuthService {
 		// CheckPlus(본인인증) 처리 후, 결과 데이타를 리턴 받기위해 다음예제와 같이 http부터 입력합니다.
 		// 리턴url은 인증 전 인증페이지를 호출하기 전 url과 동일해야 합니다. ex) 인증 전 url : http://www.~ 리턴 url :
 		// http://www.~
-		String sReturnUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getLocalPort() + "/auth/mobile/process"; // 성공시 이동될 URL
-		String sErrorUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getLocalPort() + "/auth/mobile/process"; // 실패시 이동될 URL
+		String sReturnUrl = domainName + "/auth/mobile/process"; // 성공시 이동될 URL
+		String sErrorUrl = domainName + "/auth/mobile/process"; // 실패시 이동될 URL
+
 
 		// 입력될 plain 데이타를 만든다.
 		String sPlainData = "7:REQ_SEQ" + sRequestNumber.getBytes().length + ":" + sRequestNumber + "8:SITECODE"
@@ -116,7 +120,7 @@ public class MobileAuthService {
 			model.addAttribute("di", sDupInfo);
 			model.addAttribute("birthDay", sBirthDate);
 			model.addAttribute("mobileNo", sMobileNo);
-			model.addAttribute("gende", sGender);
+			model.addAttribute("gender", sGender);
 			model.addAttribute("mobile", true);
 		} else if (iReturn == -1) {
 			throw new ResponseException("복호화 시스템 에러입니다.");

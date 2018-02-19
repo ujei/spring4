@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 
 import com.ace.common.exception.ResponseException;
+import com.ace.offline.util.CommonUtils;
 
 import Kisinfo.Check.IPINClient;
 
@@ -14,6 +15,9 @@ import Kisinfo.Check.IPINClient;
 public class IPINAuthService {
 
 	public String initIPINAuth(HttpServletRequest request) throws ResponseException {
+
+		String domainName = CommonUtils.getHostUri(request);
+		
 		String sSiteCode = "CQ60"; // IPIN 서비스 사이트 코드 (NICE평가정보에서 발급한 사이트코드)
 		String sSitePw = "hcgo2018y!@!@"; // IPIN 서비스 사이트 패스워드 (NICE평가정보에서 발급한 사이트패스워드)
 
@@ -30,7 +34,7 @@ public class IPINAuthService {
 		 * https://www.test.co.kr/ipin_process.jsp, https://test.co.kr/ipin_process.jsp
 		 * └────────────────────────────────────────────────────────────────────
 		 */
-		String sReturnURL = request.getScheme() + "://" + request.getServerName() + ":" + request.getLocalPort() + "/auth/ipin/process";
+		String sReturnURL = domainName + "/auth/ipin/process";
 
 		/*
 		 * ┌ sCPRequest 변수에 대한 설명 ─────────────────────────────────────────────────────

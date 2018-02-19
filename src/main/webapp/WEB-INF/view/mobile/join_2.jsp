@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -35,6 +36,14 @@
 			if($('#addr_detail').val() == "") {
 				alert("필수 항목을 입력해 주세요");
 			} else {
+
+				var genderId = $('input[name=sex]:checked').attr('id');
+				if(genderId == 'male') {
+					$('#gender').val(1);
+				} else {
+					$('#gender').val(2);
+				}
+				
 				var _data = $('#userInfo').serialize();
 				$.ajax({
 					method: "POST",
@@ -154,7 +163,7 @@
 							<div class="inner">
 								<div class="ti">생년월일</div>
 								<div class="txt">
-									${birthDay }
+									${fn:substring(birthDay, 0, 4)}년 ${fn:substring(birthDay, 4, 6)}월 ${fn:substring(birthDay, 6, 8)}일
 									<input name="birthDay" id="birthDay" type="hidden" value="${birthDay}" />
 									<div class="essential">
 										* 변경 불가
@@ -166,10 +175,11 @@
 							<div class="inner">
 								<div class="ti">성별</div>
 								<div class="txt">
-									<input type="radio" id="male" name="sex" checked="checked">
+									<input type="radio" id="male" name="sex" <c:if test="${gender == 1 }">checked="checked"</c:if> />
 									<label for="male">남성</label>
-									<input type="radio" id="female" name="sex">
+									<input type="radio" id="female" name="sex" <c:if test="${gender == 2 }">checked="checked"</c:if> />
 									<label for="female">여성</label>
+									<input type="hidden" id="gender" name="gender" />
 								</div>
 							</div>
 						</li>
