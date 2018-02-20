@@ -118,7 +118,7 @@ $(document).ready(function() {
 </form>
 
 
-<form name="info" id="info" method="get" action="/input">
+<form name="info" id="info" method="get" action="/offline/input">
 	<input id="eData" type="hidden" name="eData" />
 </form>
 </body>

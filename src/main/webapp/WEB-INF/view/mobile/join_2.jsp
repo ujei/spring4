@@ -334,7 +334,7 @@
 						</p>
 					</div>
 					<div class="btn-area">
-						<button class="c-button c-button--gray" type="button" onclick="location.href='/'">
+						<button class="c-button c-button--gray" type="button" onclick="location.href='/offline/'">
 							<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 							이전 단계
 						</button>
@@ -342,7 +342,7 @@
 							<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 							필수 항목을 기입하세요.
 						</button>
-						<button class="join-btn c-button c-button--red hide" type="button" onclick="location.href='/confirm'">
+						<button class="join-btn c-button c-button--red hide" type="button" onclick="location.href='/offline/confirm'">
 							<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 							다음 단계
 						</button>

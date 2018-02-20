@@ -34,7 +34,7 @@ public class IPINAuthService {
 		 * https://www.test.co.kr/ipin_process.jsp, https://test.co.kr/ipin_process.jsp
 		 * └────────────────────────────────────────────────────────────────────
 		 */
-		String sReturnURL = domainName + "/auth/ipin/process";
+		String sReturnURL = domainName + "/offline/auth/ipin/process";
 
 		/*
 		 * ┌ sCPRequest 변수에 대한 설명 ─────────────────────────────────────────────────────

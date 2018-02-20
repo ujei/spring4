@@ -19,20 +19,20 @@
 		<header>
 			<div class="header">
 				<div class="inner">
-					<h1><a href="/brand/index"><img src="/resources/brand/images/logo.png" alt="ACE Home Center" /></a></h1>
+					<h1><a href="/"><img src="/resources/brand/images/logo.png" alt="ACE Home Center" /></a></h1>
 					<nav>
 						<ul>
-							<li><a href="/brand/introduce">에이스 홈센터 소개</a></li>
-							<li><a href="/brand/product">상품 소개</a></li>
-							<li><a href="/brand/event">이벤트</a></li>
-							<li><a href="/brand/notice">공지사항</a></li>
+							<li><a href="/introduce">에이스 홈센터 소개</a></li>
+							<li><a href="/product">상품 소개</a></li>
+							<li><a href="/event">이벤트</a></li>
+							<li><a href="/notice">공지사항</a></li>
 							<li><a href="/brand/store">매장 안내</a></li>
-							<li><a href="/brand/customer">고객센터</a></li>
+							<li><a href="/customer">고객센터</a></li>
 						</ul>
 					</nav>
 					<menu>
 						<a href="#" class="btn-login">로그인</a>
-						<a href="/brand/join1">회원가입</a>
+						<a href="/join1">회원가입</a>
 						<a href="http://www.homedaymall.com/" target="_blank"><strong>홈데이몰 바로가기</strong></a>
 					</menu>
 				</div>

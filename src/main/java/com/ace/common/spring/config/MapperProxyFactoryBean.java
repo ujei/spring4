@@ -29,7 +29,6 @@ public class MapperProxyFactoryBean<T> implements FactoryBean<T> {
 	}
 
 	public boolean isSingleton() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 

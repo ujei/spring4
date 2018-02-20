@@ -13,7 +13,7 @@
 							에이스 홈센터에게 궁금한 점이 있으신가요?<br />
 							지금 바로 문의해 주세요.<br />
 							<br />
-							Call : 02-458-2589<br />
+							Call : 02-331-2823<br />
 							e-Mail : <a href="mailto:info@acehomecenter.com">info@acehomecenter.com</a>
 
 							<a href="" class="btn">온라인 문의 바로가기</a>
@@ -64,10 +64,10 @@
 				<div class="inner">
 					<div class="info">
 						<ul>
-							<li><strong>상호명</strong>유진기업(주)</li>
-							<li><strong>사업자 등록번호</strong>130-81-22624</li>
+							<li><strong>상호명</strong>유진기업(주) ACE 홈센타 금천점</li>
+							<li><strong>사업자 등록번호</strong>410-85-52148</li>
 							<li><strong>대표자명</strong>최종성</li>
-							<li><strong>소재지</strong>경기도 부천시 오정구 석천로 457(삼정동)</li>
+							<li><strong>소재지</strong>서울특별시 금천구 시흥대로 396(독산동)</li>
 							<li><strong>고객센터 주소</strong>서울시 영등포구 국제금융로2길 32 여의도 파이낸스타워 14층</li>
 							<li><strong>개인정보 관리책임자</strong>이병우</li>
 						</ul>
