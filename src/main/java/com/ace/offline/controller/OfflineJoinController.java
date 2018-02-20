@@ -22,7 +22,7 @@ import com.ace.offline.service.IPINAuthService;
 import com.ace.offline.service.MobileAuthService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/offline/")
 public class OfflineJoinController {
 
 	@Autowired
