@@ -45,7 +45,7 @@
 				var _data = $('#userInfo').serialize();
 				$.ajax({
 					method: "POST",
-					url: "/join/process",
+					url: "/offline/join/process",
 					data: encodeURI(_data)
 				}).done(function(data) {
 					$('#name').val(data.name);
@@ -155,7 +155,7 @@
 					<strong>2</strong><span>개인정보 입력</span>
 				</div>
 			</div>
-			<form name="userInfo" id="userInfo" action="/confirm" method="post">
+			<form name="userInfo" id="userInfo" action="/offline/confirm" method="post">
 				<div class="info">
 					<input name="di" id="di" type="hidden" value="${di}" />
 					<div class="stitle">

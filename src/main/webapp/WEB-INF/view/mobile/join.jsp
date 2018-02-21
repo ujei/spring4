@@ -12,35 +12,43 @@
 	<script type="text/javascript" src="/resources/js/lib/jquery-fakeform-0.5.js"></script>
 	<script type="text/javascript" src="/resources/js/common.js"></script>
 	<script type="text/javascript">
-window.name ="Parent_window";
-
-$(document).ready(function() {
-	$('.ipin').click(function() {
-		$.ajax({
-			method: "POST",
-			url: "/auth/ipin"
-		}).done(function(data) {
-			document.form_ipin.enc_data.value = data;
-			window.open('', 'popupIPIN2', 'width=450, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
-			document.form_ipin.target = "popupIPIN2";
-			document.form_ipin.action = "https://cert.vno.co.kr/ipin.cb";
-			document.form_ipin.submit();
+	window.name ="Parent_window";
+	var IS_AUTH = false;
+	$(document).ready(function() {
+		$('.ipin').click(function() {
+			$.ajax({
+				method: "POST",
+				url: "/offline/auth/ipin"
+			}).done(function(data) {
+				document.form_ipin.enc_data.value = data;
+				window.open('', 'popupIPIN2', 'width=450, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+				document.form_ipin.target = "popupIPIN2";
+				document.form_ipin.action = "https://cert.vno.co.kr/ipin.cb";
+				document.form_ipin.submit();
+			});
+		});
+		
+		$('.phone').click(function() {
+			$.ajax({
+				method: "POST",
+				url: "/offline/auth/phone"
+			}).done(function(data) {
+				document.form_chk.EncodeData.value = data;
+				window.open('', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+				document.form_chk.action = "https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb";
+				document.form_chk.target = "popupChk";
+				document.form_chk.submit();
+			});
+		});
+		
+		$('.skip_auth').click(function() {
+			if(!IS_AUTH) {
+				alert("본인인증 후 회원가입이 진행됩니다");	
+			} else {
+				location.href = "/offline/input";
+			}
 		});
 	});
-	
-	$('.phone').click(function() {
-		$.ajax({
-			method: "POST",
-			url: "/auth/phone"
-		}).done(function(data) {
-			document.form_chk.EncodeData.value = data;
-			window.open('', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
-			document.form_chk.action = "https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb";
-			document.form_chk.target = "popupChk";
-			document.form_chk.submit();
-		});
-	});
-});
 	</script>
 	<title>에이스 홈센터 오프라인 가입</title>
 </head>
@@ -92,7 +100,7 @@ $(document).ready(function() {
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						건너뛰기
 					</button>
-					<button class="c-button c-button--red" type="button" onclick="location.href='/input'">
+					<button class="c-button c-button--red skip_auth" type="button">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						다음 단계
 					</button>

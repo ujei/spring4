@@ -1,10 +1,10 @@
 package com.ace.offline.dao.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import com.ace.offline.domain.User;
 
-@Mapper
+@Repository(value="userMapper")
 public interface UserMapper {
 
 	public User getUser();

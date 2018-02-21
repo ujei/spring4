@@ -47,7 +47,7 @@
 				var _data = $('#userInfo').serialize();
 				$.ajax({
 					method: "POST",
-					url: "/join/process",
+					url: "/offline/join/process",
 					data: encodeURI(_data)
 				}).done(function(data) {
 					$('#name').val(data.name);
@@ -125,7 +125,7 @@
 					<strong>2</strong><span>개인정보 입력</span>
 				</div>
 			</div>
-			<form name="userInfo" id="userInfo" action="/confirm" method="post">
+			<form name="userInfo" id="userInfo" action="/offline/confirm" method="post">
 				<div class="info">
 					<div class="stitle">
 						<input name="di" id="di" type="hidden" value="${di}" />
@@ -196,7 +196,7 @@
 								<div class="ti">우편번호</div>
 								<div class="txt">
 									<span class="postcodify_postcode5"></span>
-									<input type="text" id="postCode" name="postCode" class="postcodify_postcode5" value="" />
+									<input type="hidden" id="postCode" name="postCode" class="postcodify_postcode5" value="" />
 								</div>
 							</div>
 						</li>
@@ -205,7 +205,7 @@
 								<div class="ti">도로명주소</div>
 								<div class="txt">
 									<span class="postcodify_address"></span>
-									<input type="text" name="address" class="postcodify_address" value="" />
+									<input type="hidden" id="address" name="address" class="postcodify_address" value="" />
 								</div>
 							</div>
 						</li>
@@ -214,7 +214,7 @@
 								<div class="ti">지번주소</div>
 								<div class="txt">
 									<span class="postcodify_jibeon_address"></span>
-									<input type="text" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" />
+									<input type="hidden" id="address_jibeon" name="address_jibeon" class="postcodify_jibeon_address" value="" />
 								</div>
 							</div>
 						</li>

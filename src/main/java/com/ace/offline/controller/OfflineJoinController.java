@@ -95,11 +95,26 @@ public class OfflineJoinController {
 		model.addAttribute("postCode", userInfo.getPostCode());
 		model.addAttribute("addr1", URLDecoder.decode(userInfo.getAddress(), "UTF-8") + URLDecoder.decode(userInfo.getAddr_detail(), "UTF-8"));
 		model.addAttribute("addr2", URLDecoder.decode(userInfo.getAddress_jibeon(), "UTF-8") + URLDecoder.decode(userInfo.getAddr_detail(), "UTF-8"));
+		model.addAttribute("marketingPost", request.getParameter("marketing-post"));
+		model.addAttribute("marketingPhone", request.getParameter("marketing-phone"));
+		model.addAttribute("marketingSms", request.getParameter("marketing-sms"));
+		model.addAttribute("house", request.getParameter("house"));
+		model.addAttribute("visitpath", request.getParameter("visitpath"));
+		model.addAttribute("interest", request.getParameter("interest"));
 		
 		if(device.isMobile()) {
 			return DefaultConstants.DEFAULT_MOBILE_VIEW_CONFIRM_INFO;
 		} else {
 			return DefaultConstants.DEFAULT_PC_VIEW_CONFIRM_INFO;
+		}
+	}
+	
+	@RequestMapping(value = "/join/complete", method = RequestMethod.POST)
+	public String completeProcess(HttpServletRequest request, Device device) {
+		if(device.isMobile()) {
+			return DefaultConstants.DEFAULT_MOBILE_VIEW_JOIN_COMPLETE;
+		} else {
+			return DefaultConstants.DEFAULT_PC_VIEW_JOIN_COMPLETE;
 		}
 	}
 	

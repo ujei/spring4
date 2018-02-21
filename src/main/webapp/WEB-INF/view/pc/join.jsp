@@ -20,7 +20,7 @@ $(document).ready(function() {
 	$('.ipin').click(function() {
 		$.ajax({
 			method: "POST",
-			url: "/auth/ipin"
+			url: "/offline/auth/ipin"
 		}).done(function(data) {
 			document.form_ipin.enc_data.value = data;
 			window.open('', 'popupIPIN2', 'width=450, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
@@ -33,7 +33,7 @@ $(document).ready(function() {
 	$('.phone').click(function() {
 		$.ajax({
 			method: "POST",
-			url: "/auth/phone"
+			url: "/offline/auth/phone"
 		}).done(function(data) {
 			document.form_chk.EncodeData.value = data;
 			window.open('', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
@@ -47,7 +47,7 @@ $(document).ready(function() {
 		if(!IS_AUTH) {
 			alert("본인인증 후 회원가입이 진행됩니다");	
 		} else {
-			location.href = "/input";
+			location.href = "/offline/input";
 		}
 	});
 });

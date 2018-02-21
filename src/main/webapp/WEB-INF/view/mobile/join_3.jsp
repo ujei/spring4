@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -11,6 +14,25 @@
 	<script type="text/javascript" src="/resources/js/lib/swiper.min.js"></script>
 	<script type="text/javascript" src="/resources/js/lib/jquery-fakeform-0.5.js"></script>
 	<script type="text/javascript" src="/resources/js/common.js"></script>
+	<script type="text/javascript">
+$(document).ready(function() {
+	$('.join-complete').click(function() {
+		var _data = $('#userInfo').serialize();
+		$.ajax({
+			method: "POST",
+			url: "/offline/join/complete",
+			data: encodeURI(_data)
+		}).done(function(data) {
+			location.href = location.protocol + "//" + location.hostname + ":" + location.port + "/offline/complete";
+		});
+	});
+	
+	$('.c-button--gray').click(function() {
+		history.back();
+	});
+});
+		
+</script>
 	<title>에이스 홈센터 오프라인 가입</title>
 </head>
 <body>
@@ -83,13 +105,17 @@
 						<li>
 							<div class="inner">
 								<div class="ti">마케팅 수신 동의</div>
-								<div class="txt">우편, 전화, 문자</div>
+								<div class="txt">
+									<c:if test="${marketingPost == 'on'}">우편</c:if>
+									<c:if test="${marketingPhone == 'on'}">전화</c:if>
+									<c:if test="${marketingSms == 'on'}">문자</c:if>
+								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
 				<div class="btn-area">
-					<button class="c-button c-button--gray" type="button" onclick="location.href='/input'">
+					<button class="c-button c-button--gray" type="button">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						수정하기
 					</button>
