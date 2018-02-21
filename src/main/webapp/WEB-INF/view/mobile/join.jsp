@@ -96,7 +96,7 @@
 					<p>본인 인증 중 오류 발생 시 문의 <strong>나이스평가정보 1600-1522</strong></p>
 				</div>
 				<div class="btn-area">
-					<button class="c-button c-button--gray" type="button" onclick="location.href='/input'">
+					<button class="c-button c-button--gray" type="button">
 						<div class="c-ripple js-ripple"><span class="c-ripple__circle"></span></div>
 						건너뛰기
 					</button>
